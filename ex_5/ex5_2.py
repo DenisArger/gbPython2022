@@ -16,14 +16,6 @@
 import random
 
 
-def change_player(player):  # Метод для смены игрока
-    if player == "player1":
-        player = "player2"
-    else:
-        player = "player1"
-    return player
-
-
 def move(player, current_candies):  # Метод хода игрока
     print(f"Ход игрока {names[player]}")
     print(f"Сейчас на столе {current_candies} конфет")
@@ -56,6 +48,14 @@ def bot_move(current_candies):  # Бот
         return int(random.randint(1, 28))
     else:
         return remains
+
+
+def change_player(player):  # Метод для смены игрока
+    if player == "player1":
+        player = "player2"
+    else:
+        player = "player1"
+    return player
 
 
 candies = int(100)  # Стартовое количество конфет
