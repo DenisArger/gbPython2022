@@ -18,21 +18,27 @@ def create_list():
     return list
 
 
-def mult(list):
-    list_new = []
-    len_list = len(list)
+# Было
+# def mult(list):
+#     list_new = []
+#     len_list = len(list)
 
-    size = 0
-    if len_list % 2 == 0:
-        size = len_list // 2
-    else:
-        size = len_list // 2 + 1
+#     size = 0
+#     if len_list % 2 == 0:
+#         size = len_list // 2
+#     else:
+#         size = len_list // 2 + 1
 
-    for i in range(0, size):
-        list_new.append(list[i] * list[len_list - i - 1])
-    return list_new
+#     for i in range(0, size):
+#         list_new.append(list[i] * list[len_list - i - 1])
+#     return list_new
+
+
+def mult_new(list):
+    repeats = len(list) // 2 if len(list) % 2 == 0 else len(list) // 2 + 1
+    return [list[i] * list[len(list) - (i + 1)] for i in range(repeats)]
 
 
 list = create_list()
 print(list)
-print(mult(list))
+print(mult_new(list))

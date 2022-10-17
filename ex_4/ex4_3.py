@@ -18,23 +18,30 @@ def create_list():
     return list
 
 
-def is_not_reaper(array):
-    answer = []
-    checked_numbers = []
-    for i in range(len(array)):
-        if array[i] not in checked_numbers:
-            checked_numbers.append(array[i])
-            counter = True
-            for j in range(i + 1, len(array)):
-                if array[j] == array[i]:
-                    counter = False
-                    break
-            if counter:
-                answer.append(array[i])
+# Было
+# def is_not_reaper(array):
+#     answer = []
+#     checked_numbers = []
+#     for i in range(len(array)):
+#         if array[i] not in checked_numbers:
+#             checked_numbers.append(array[i])
+#             counter = True
+#             for j in range(i + 1, len(array)):
+#                 if array[j] == array[i]:
+#                     counter = False
+#                     break
+#             if counter:
+#                 answer.append(array[i])
 
+#     return answer
+
+
+def is_not_reaper_new(array):
+    answer = []
+    [answer.append(i) for i in array if i not in answer]
     return answer
 
 
-list = create_list()
-list_not_repeat = is_not_reaper(list)
+list_ = create_list()
+list_not_repeat = is_not_reaper_new(list_)
 print(list_not_repeat)
