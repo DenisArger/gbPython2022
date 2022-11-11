@@ -17,14 +17,22 @@ def create_list():
     return list
 
 
-def sum_not_paritiry(list):
-    sum = 0
-    for i in range(1, len(list)):
-        if i % 2 != 0:
-            sum += list[i]
-    return sum
+# Было
+# def sum_not_paritiry(list):
+#     sum = 0
+#     for i in range(1, len(list)):
+#         if i % 2 != 0:
+#             sum += list[i]
+#     return sum
+
+# Стало
+def sum_not_paritiry_new(list_new):
+    return sum(x for i, x in enumerate(list_new) if i % 2 != 0)
 
 
-list = create_list()
-print(list)
-print(f"Сумма элементов списка, стоящих на нечётной позиции: {sum_not_paritiry(list)}")
+list_ = create_list()
+print(list_)
+print(
+    f"Сумма элементов списка, \
+стоящих на нечётной позиции: {sum_not_paritiry_new(list_)}"
+)
